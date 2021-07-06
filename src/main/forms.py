@@ -10,8 +10,8 @@ from wtforms.validators import DataRequired, ValidationError
 
 
 class ChatForm(FlaskForm):
-    channel_name = PasswordField('Channel Name', validators=[DataRequired()])
-    password = PasswordField('Prefix command', validators=[DataRequired()])
-    submit = SubmitField('Create')
+    channel = StringField('Channel Name', validators=[DataRequired()])
+    prefix =  StringField('Prefix command', validators=[DataRequired()])
+    submit =  SubmitField('Create')
 
 

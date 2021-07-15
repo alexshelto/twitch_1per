@@ -29,13 +29,14 @@ def create_feed():
         user_id = uuid1()
         channel = form.channel.data
         prefix = form.prefix.data
+        count = form.count.data
 
-        return redirect(url_for('main.view', u_id=user_id, channel=channel, prefix=prefix))
+        return redirect(url_for('main.view', u_id=user_id, channel=channel, prefix=prefix, count=count))
     return render_template('create_feed.html', title='Create Entry', form=form)
 
 
-@main.route('/view/<string:u_id>/<string:channel>/<string:prefix>', methods=['GET', 'POST'])
-def view(u_id, channel, prefix):
+@main.route('/view/<string:u_id>/<string:channel>/<string:prefix>/<int:count>', methods=['GET', 'POST'])
+def view(u_id, channel, prefix, count):
 
     # IRC CONFIGS
     server='irc.chat.twitch.tv'
@@ -58,7 +59,11 @@ def view(u_id, channel, prefix):
 
     print("connection sucsess")
 
-    while True: 
+    counter = 0
+    while True:
+        if counter == count:
+            break
+
         try:
             resp = irc.recv(2048).decode('utf-8')
             
@@ -70,6 +75,8 @@ def view(u_id, channel, prefix):
 
                 if message.startswith(prefix):
                     print(f'{username}: {message}')
+
+                    counter += 1
 
         except socket.error:
             print('lost connection')

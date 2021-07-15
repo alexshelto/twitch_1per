@@ -24,9 +24,21 @@ def create_feed():
         #form.channel.data, etc 
         flash('BAMMMM', 'success')
 
-        return redirect(url_for('users.login')) 
+        channel = form.channel.data
+        prefix = form.prefix.data
+        print(f'Channel: {channel}, Prefix: {prefix}')
+
+        return redirect(url_for('main.home'))
 
     return render_template('create_feed.html', title='Create Entry', form=form)
+
+
+@main.route('/view/<string:id>', methods=['GET', 'POST'])
+def view(id):
+    pass
+
+
+    
 
 
 

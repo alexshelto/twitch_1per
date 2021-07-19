@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+
+
 
 export class CreateForm extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {channel: '',
                       prefix: '',
                       limit: 0 
@@ -29,27 +32,32 @@ export class CreateForm extends React.Component {
     handleSubmit(event) {
         alert(`This form was entered:\nChannel: ${this.state.channel}\nPrefix: ${this.state.prefix}\nLimit: ${this.state.limit}`);
         event.preventDefault();
+
+        // Move to new page, get unique id thing for user
+        // uuid
+        this.props.history.push('/view');
     }
 
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
-                <div id="form-items">
                     <label>
                         Twitch Channel:
-                        <input type="text" value={this.state.channel} onChange={this.handleChangeChannel} />
                     </label>
+                        <input type="text" value={this.state.channel} onChange={this.handleChangeChannel} />
                     <label>
                         Message Prefix:
-                        <input type="text" value={this.state.prefix} onChange={this.handleChangePrefix} />
                     </label>
+                        <input type="text" value={this.state.prefix} onChange={this.handleChangePrefix} />
                     <label>
                         Message Limit:
-                        <input type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
                     </label>
-                </div>
+                        <input type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
                 <input type="submit" value="Submit" />
             </form>
+
         );
     }
 }
+
+//export default withRouter(CreateForm);

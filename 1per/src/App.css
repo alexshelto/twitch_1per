@@ -40,7 +40,7 @@
 #navbar-links ul {
     display: flex;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
 }
 
 #navbar-links li {
@@ -56,5 +56,20 @@
 
 #navbar-links li:hover {
   background-color: #555;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 

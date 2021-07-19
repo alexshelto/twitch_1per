@@ -22,12 +22,14 @@ function App() {
     <Route path="/" exact component={Home} />
     <Route path="/about"  component={About} />
     <Route path="/create"  component={Create} />
+    <Route path="/view" component={View} />
 
     </main>
     </Router>
   );
 }
 
+// These will be their own individual comonents
 const Home = () => (
   <Fragment>
     <h1>Home</h1>
@@ -49,6 +51,12 @@ const Create = () => (
     <CreateForm />
   </Fragment>
     </div>
+  );
+
+const View = () => (
+  <Fragment>
+    <h1>View</h1>
+  </Fragment>
   );
 
 

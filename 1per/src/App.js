@@ -1,13 +1,15 @@
 
-import { Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { CreateForm } from "./Components/CreateForm";
+
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Create from "./Pages/Create";
+import View from "./Pages/View";
 
 import './App.css';
 
 function App() {
   return (
-
     <Router>
       <main>
         <nav id='navbar'>
@@ -29,35 +31,7 @@ function App() {
   );
 }
 
-// These will be their own individual comonents
-const Home = () => (
-  <Fragment>
-    <h1>Home</h1>
-  </Fragment>
-  );
 
-const About = () => (
-  <Fragment>
-    <h1>About</h1>
-  </Fragment>
-  );
-
-const Create = () => (
-    <div>
-  <Fragment>
-    <h1>Create</h1>
-  </Fragment>
-  <Fragment>
-    <CreateForm />
-  </Fragment>
-    </div>
-  );
-
-const View = () => (
-  <Fragment>
-    <h1>View</h1>
-  </Fragment>
-  );
 
 
 export default App;

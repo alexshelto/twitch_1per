@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -25,17 +26,20 @@ export class CreateForm extends React.Component {
     handleChangePrefix(event) {
         this.setState({prefix: event.target.value});
     }
+
     handleChangeLimit(event) {
         this.setState({limit: event.target.value});
     }
 
     handleSubmit(event) {
-        alert(`This form was entered:\nChannel: ${this.state.channel}\nPrefix: ${this.state.prefix}\nLimit: ${this.state.limit}`);
+        //alert(`This form was entered:\nChannel: ${this.state.channel}\nPrefix: ${this.state.prefix}\nLimit: ${this.state.limit}`);
         event.preventDefault();
+        console.log("submit clicked");
 
         // Move to new page, get unique id thing for user
         // uuid
-        this.props.history.push('/view');
+        //this.props.history.push('/view');
+        return <Redirect to='/view' />;
     }
 
     render() {
@@ -60,4 +64,4 @@ export class CreateForm extends React.Component {
     }
 }
 
-//export default withRouter(CreateForm);
+export default CreateForm; 

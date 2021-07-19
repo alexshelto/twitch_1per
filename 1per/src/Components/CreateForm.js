@@ -9,7 +9,8 @@ export class CreateForm extends React.Component {
         super();
         this.state = {channel: '',
                       prefix: '',
-                      limit: 0 
+                      limit: 0 ,
+                      redirect: false
                     };
 
         this.handleChangeChannel = this.handleChangeChannel.bind(this);
@@ -32,17 +33,27 @@ export class CreateForm extends React.Component {
     }
 
     handleSubmit(event) {
-        //alert(`This form was entered:\nChannel: ${this.state.channel}\nPrefix: ${this.state.prefix}\nLimit: ${this.state.limit}`);
         event.preventDefault();
-        console.log("submit clicked");
+
+        if(this.state.limit > 0) {
+            console.log("Valid limit");
+            this.setState({redirect: true});
+        }
 
         // Move to new page, get unique id thing for user
         // uuid
-        //this.props.history.push('/view');
-        return <Redirect to='/view' />;
     }
 
     render() {
+
+        const { redirect } = this.state;
+        console.log(`In render, current redirect status: ${redirect}`);
+
+        if (redirect) {
+            return <Redirect to='/view'/>
+        }
+
+
         return(
             <form onSubmit={this.handleSubmit}>
                     <label>

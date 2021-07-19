@@ -1,8 +1,9 @@
 
 import { Fragment } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { CreateForm } from "./Components/CreateForm";
 
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -40,9 +41,14 @@ const About = () => (
   );
 
 const Create = () => (
+    <div>
   <Fragment>
     <h1>Create</h1>
   </Fragment>
+  <Fragment>
+    <CreateForm />
+  </Fragment>
+    </div>
   );
 
 

@@ -1,13 +1,44 @@
 
-import { Fragment } from "react";
+
+import React from 'react';
+import Message from '../Components/Message';
 
 
-const View = () => (
-  <Fragment>
-    <h1>View</h1>
-  </Fragment>
-);
+export class View extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            messageCount: 0,
+            messageLimit: 420,
+            messages: []
+        };
 
+        this.handle = this.handle.bind(this);
+    }
 
-export default View;
+    handle() {
+        console.log('worked');
+        this.setState(prevState => ({
+            messages: [...prevState.messages, "hello world"]
+        }));
+    }
+
+    render() {
+        return(
+            <div>
+                <button onClick={this.handle}> Click me </button>
+                
+                {
+                    this.state.messages.map((msg) => (
+                        <Message message={msg}  />
+                    ))
+                }
+
+            </div>
+
+        );
+    }
+}
+
+export default View; 
 

@@ -3,7 +3,6 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 
-
 export class CreateForm extends React.Component {
     constructor() {
         super();
@@ -50,7 +49,12 @@ export class CreateForm extends React.Component {
         console.log(`In render, current redirect status: ${redirect}`);
 
         if (redirect) {
-            return <Redirect to='/view'/>
+            return <Redirect 
+                to={{
+                    pathname: '/view',
+                    state: {channel: this.state.channel}
+                }}
+            />
         }
 
 

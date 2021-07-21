@@ -5,6 +5,8 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Create from "./Pages/Create";
 import View from "./Pages/View";
+//<Route path="/view" component={View} />
+//<Route path="/view" render={(props) => <View {...props}/>}/>
 
 import './App.css';
 

@@ -52,7 +52,11 @@ export class CreateForm extends React.Component {
             return <Redirect 
                 to={{
                     pathname: '/view',
-                    state: {channel: this.state.channel}
+                    state: {
+                        channel: this.state.channel, 
+                        limit: this.state.limit,
+                        prefix: this.state.prefix
+                    }
                 }}
             />
         }

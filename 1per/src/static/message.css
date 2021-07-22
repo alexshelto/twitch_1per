@@ -5,10 +5,18 @@
 
 }
 
+
+.messages {
+    margin: 2vh;
+    height: 92vh;
+}
+
+
+/*fix the center*/
 .message-blob {
   border-radius: 8px;
   padding: 0.1rem;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: #99ff99;
 }
 
@@ -19,9 +27,13 @@ h2 {
 
 /* message is the generated html element from the text */
 .message {
-
+    padding: 0.5rem;
 }
 
 .message-blob .display-name {
   font-weight: bold;
+}
+
+.centered-info {
+    text-align: center;
 }

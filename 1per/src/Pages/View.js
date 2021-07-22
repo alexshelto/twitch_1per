@@ -28,16 +28,15 @@ export class View extends React.Component {
 
 
     componentDidMount() { 
-        console.log('in did mount');
 
         if(this.state.messageCount < this.state.messageLimit) {
-            console.log("stepping inside for more");
 
             this.state.client.on('message', (channel, userstate, message, self) => {
 
                 if(this.state.messageCount >= this.state.messageLimit) {
                     console.log("hit limit we gone");
-                    //NOTE: probably just kill the irc bot as well 
+                    this.state.client.disconnect();
+                    this.setState({client: null});
                     return;
                 }
 
@@ -51,7 +50,6 @@ export class View extends React.Component {
                     // Need to update the messages state
 
                     this.setState(prevState => ({
-                        //messages: [...prevState.messages, content], 
                         messages: [...prevState.messages, {username: content.username, message: content.message}],
                         messageCount: prevState.messageCount + 1,
                         usernameHistory: new Set(prevState.usernameHistory).add(content.username)
@@ -65,29 +63,33 @@ export class View extends React.Component {
 
     // NOTE: Handle so that spamming stop doesnt blow up the program
     handleStop() {
-        if(this.state.client)
+        if(this.state.client) {
             this.state.client.disconnect();
+            this.setState({client: null});
+        }
     }
 
 
     render() {
-        if(!this.state.client) {
-            return <h1> State NULL </h1>;
-        } 
+        let StopButton;
+        if(this.state.client) {
+            StopButton = <button onClick={this.handleStop}> Stop Submissions </button>;
+        }
 
 
         return(
             <div>
-            <h1>{this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1>
-                <button onClick={this.handleStop}> Stop Submissions </button>
+                <h1 class="centered-info"> {this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1>
 
-                
+                {StopButton}
+
+            <div class="messages">
                 {
                     this.state.messages.map((entry) => (
                         <Message className="Message" key="" username={entry['username']} message={entry['message']} color={entry['color']} />
                     ))
                 }
-                
+            </div>
 
             </div>
         );
@@ -95,6 +97,4 @@ export class View extends React.Component {
 }
 
 export default View; 
-
-
             

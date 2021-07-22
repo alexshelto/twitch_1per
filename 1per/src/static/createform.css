@@ -1,0 +1,16 @@
+
+
+.centered-div {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.submit-btn {
+
+    /* center the html button */
+}

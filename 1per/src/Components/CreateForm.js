@@ -2,6 +2,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
+import '../static/createform.css';
+
 
 export class CreateForm extends React.Component {
     constructor() {
@@ -63,21 +65,26 @@ export class CreateForm extends React.Component {
 
 
         return(
-            <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Twitch Channel:
-                    </label>
-                        <input type="text" value={this.state.channel} onChange={this.handleChangeChannel} />
-                    <label>
-                        Message Prefix:
-                    </label>
-                        <input type="text" value={this.state.prefix} onChange={this.handleChangePrefix} />
-                    <label>
-                        Message Limit:
-                    </label>
-                        <input type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
-                <input type="submit" value="Submit" />
-            </form>
+            <div class='centered-div'> 
+
+                <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Twitch Channel:
+                        </label>
+                            <input type="text" value={this.state.channel} onChange={this.handleChangeChannel} />
+                        <label>
+                            Message Prefix:
+                        </label>
+                            <input type="text" value={this.state.prefix} onChange={this.handleChangePrefix} />
+                        <label>
+                            Message Limit:
+                        </label>
+                            <input type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
+                        <br/>
+                    <input class='submit-btn' type="submit" value="Submit" />
+                </form>
+
+            </div>
 
         );
     }

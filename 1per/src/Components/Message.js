@@ -13,7 +13,7 @@ export class Message extends React.Component {
             backgroundColor: { color }
         };
 
-        console.log(style.color);
+        console.log(style.backgroundColor);
 
 
         return (
@@ -28,4 +28,3 @@ export class Message extends React.Component {
 
 export default Message
 
-                //<span class='display-name' >{this.props.username} </span>

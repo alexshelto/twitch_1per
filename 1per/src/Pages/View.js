@@ -1,23 +1,20 @@
 
-
 import React from 'react';
 import Message from '../Components/Message';
 
 import tmi from 'tmi.js';
 
+
 export class View extends React.Component {
     constructor(props) {
         super(props);
-
-    const client = new tmi.Client({
-                channels: [`#${props.location.state.channel}`]
-    });
 
         this.state = {
             channel: props.location.state.channel, 
             prefix: props.location.state.prefix,
             messageCount: 0,
             messageLimit: props.location.state.limit,
+            usernameHistory: new Set(),
             messages: [],
             client: new tmi.Client({
                 channels: [`#${props.location.state.channel}`]
@@ -25,7 +22,6 @@ export class View extends React.Component {
         };
 
         this.state.client.connect();
-
         this.handleStop = this.handleStop.bind(this);
     }
 
@@ -43,23 +39,26 @@ export class View extends React.Component {
                     //NOTE: probably just kill the irc bot as well 
                     return;
                 }
+
                 const content = {
                     username: userstate['display-name'],
                     message: message
                 }
 
-                if(message.toLowerCase().startsWith(this.state.prefix)) {
+                if(message.toLowerCase().startsWith(this.state.prefix) && !this.state.usernameHistory.has(content.username) ) {
+                    // Need to update the messages state
 
                     this.setState(prevState => ({
-                        messages: [...prevState.messages, content], 
-                        messageCount: prevState.messageCount + 1
+                        //messages: [...prevState.messages, content], 
+                        messages: [...prevState.messages, {username: content.username, message: content.message}],
+                        messageCount: prevState.messageCount + 1,
+                        usernameHistory: new Set(prevState.usernameHistory).add(content.username)
                     }));
                 }
 
             });
         }
     }
-
 
 
     // NOTE: Handle so that spamming stop doesnt blow up the program
@@ -74,15 +73,20 @@ export class View extends React.Component {
             return <h1> State NULL </h1>;
         } 
 
+
         return(
             <div>
             <h1>{this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1>
                 <button onClick={this.handleStop}> Stop Submissions </button>
+
+                
                 {
                     this.state.messages.map((entry) => (
                         <Message key="" username={entry['username']} message={entry['message']}  />
                     ))
                 }
+                
+
             </div>
         );
     }
@@ -90,3 +94,5 @@ export class View extends React.Component {
 
 export default View; 
 
+
+            

@@ -5,6 +5,7 @@ import Message from '../Components/Message';
 import tmi from 'tmi.js';
 
 
+
 export class View extends React.Component {
     constructor(props) {
         super(props);
@@ -42,7 +43,8 @@ export class View extends React.Component {
 
                 const content = {
                     username: userstate['display-name'],
-                    message: message
+                    message: message,
+                    color: userstate['color']
                 }
 
                 if(message.toLowerCase().startsWith(this.state.prefix) && !this.state.usernameHistory.has(content.username) ) {
@@ -82,7 +84,7 @@ export class View extends React.Component {
                 
                 {
                     this.state.messages.map((entry) => (
-                        <Message key="" username={entry['username']} message={entry['message']}  />
+                        <Message className="Message" key="" username={entry['username']} message={entry['message']} color={entry['color']} />
                     ))
                 }
                 

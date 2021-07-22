@@ -1,0 +1,27 @@
+
+.Message{
+  border-radius: 8px;
+  padding: 10px;
+
+}
+
+.message-blob {
+  border-radius: 8px;
+  padding: 0.1rem;
+  margin: 0.5rem;
+  background-color: #99ff99;
+}
+
+h2 {
+    margin-bottom: -1rem; /* remove bottom margin of username */
+}
+
+
+/* message is the generated html element from the text */
+.message {
+
+}
+
+.message-blob .display-name {
+  font-weight: bold;
+}

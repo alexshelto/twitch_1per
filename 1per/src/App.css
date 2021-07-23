@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+#container {
+  max-width: 760px;
+  margin: auto;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -62,3 +67,26 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
+.center-btn {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#skip a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip a:focus {
+    height: auto;
+    position: static;
+    width: auto;
+}

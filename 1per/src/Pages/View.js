@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import Message from '../Components/Message';
 
 import tmi from 'tmi.js';
@@ -73,25 +73,26 @@ export class View extends React.Component {
     render() {
         let StopButton;
         if(this.state.client) {
-            StopButton = <button onClick={this.handleStop}> Stop Submissions </button>;
+            StopButton = <button class='center-btn' onClick={this.handleStop}> Stop Submissions </button>;
         }
 
 
         return(
+          <Fragment>
             <div>
-                <h1 class="centered-info"> {this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1>
-
+                <h1 class="centered-info"> {this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1> 
                 {StopButton}
 
-            <div class="messages">
+          </div>
+
+            <div id='mainContent'>
                 {
                     this.state.messages.map((entry) => (
-                        <Message className="Message" key="" username={entry['username']} message={entry['message']} color={entry['color']} />
+                       <Message className="Message" key="" username={entry['username']} message={entry['message']} color={entry['color']} /> 
                     ))
                 }
             </div>
-
-            </div>
+          </Fragment>
         );
     }
 }

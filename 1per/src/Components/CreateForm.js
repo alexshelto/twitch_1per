@@ -62,12 +62,12 @@ export class CreateForm extends React.Component {
                 }}
             />
         }
-
-
         return(
+
+          <div>
             <div class='centered-div'> 
 
-                <form onSubmit={this.handleSubmit}>
+                <form id='mainContent' onSubmit={this.handleSubmit}>
                         <label>
                             Twitch Channel:
                         </label>
@@ -85,6 +85,7 @@ export class CreateForm extends React.Component {
                 </form>
 
             </div>
+          </div>
 
         );
     }

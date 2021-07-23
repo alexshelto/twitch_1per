@@ -17,7 +17,7 @@ export class Message extends React.Component {
 
 
         return (
-            <div class="message-blob" >
+            <div class="message-blob" tabindex="0">
             <h2 class='display-name' >{this.props.username} </h2>
                 <br/>
                 <span class="message"> {this.props.message} </span>

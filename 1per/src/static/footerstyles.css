@@ -1,0 +1,31 @@
+
+.footer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+
+    text-align: center;
+
+    background-color: #181818;
+    color: white;
+}
+
+.footer-row { 
+
+}
+
+.footer-link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: white;
+}
+

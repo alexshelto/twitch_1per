@@ -1,23 +1,23 @@
 
+/*
 .Message{
   border-radius: 8px;
   padding: 10px;
 
 }
-
+*/
 
 .messages {
     margin: 2vh;
-    height: 92vh;
+    height: 82vh;
 }
 
 
-/*fix the center*/
 .message-blob {
-  border-radius: 8px;
+  border-radius: 9px;
   padding: 0.1rem;
   margin-bottom: 0.5rem;
-  background-color: #99ff99;
+  background-color: #6441A5;
 }
 
 h2 {
@@ -37,3 +37,4 @@ h2 {
 .centered-info {
     text-align: center;
 }
+

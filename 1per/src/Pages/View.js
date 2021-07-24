@@ -82,6 +82,7 @@ export class View extends React.Component {
             <div>
                 <h1 class="centered-info"> {this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1> 
                 {StopButton}
+                <hr/>
 
           </div>
 

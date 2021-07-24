@@ -79,8 +79,10 @@ export class CreateForm extends React.Component {
                         <label>
                             Message Limit:
                         </label>
-                            <input type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
-                        <br/>
+                        <label>
+                            <input class="middle-element" type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
+                        </label>
+
                     <input class='submit-btn' type="submit" value="Submit" />
                 </form>
 

@@ -1,8 +1,4 @@
 
-.middle-element {
-
-}
-
 .mainContent {
 
 }
@@ -18,8 +14,19 @@ form {
 }
 
 .submit-btn {
-
+  display: flec;
+  margin: 2vh;
+  border-radius: 6px;
 }
+
+.btn-holder {
+  display: flex;
+  justify-content: center;
+}
+
+input[type='number']{
+    width: 100%;
+} 
 
 #skip a {
     position: absolute;

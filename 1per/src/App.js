@@ -9,7 +9,7 @@ import Create from "./Pages/Create";
 import View from "./Pages/View";
 
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+//import Footer from "./Components/Footer";
 
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
         <div class='App'>
         <Router>
             <div id="skip">
-                <a href="#mainContent">Skip to main content</a>
+                <a class='skip-to-content' href="#mainContent">Skip to main content</a>
             </div>
 
             <Header />

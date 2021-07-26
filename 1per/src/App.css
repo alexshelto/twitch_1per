@@ -4,6 +4,11 @@
 
 }
 
+
+.skip-to-content {
+  color: #FFFF;
+}
+
 #container {
   max-width: 760px;
   margin: auto;

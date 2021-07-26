@@ -74,11 +74,18 @@ export class CreateForm extends React.Component {
                         <label for='prefix' > Message Prefix: </label>
                         <input type="text" id='prefix' value={this.state.prefix} onChange={this.handleChangePrefix} />
 
-                        <label for='limit'>Message Limit:</label>
-                        <input type="number" id='limit' value={this.state.limit} onChange={this.handleChangeLimit} />
 
-                        <input class='submit-btn' type="submit" value="Submit" />
+                        <label for='limit'>Message Limit:</label>
+                        <div class='btn-holder'>
+                          <input type="number" id='limit' value={this.state.limit} onChange={this.handleChangeLimit} />
+                        </div>
+
+                        <div class='btn-holder'>
+                          <input class='submit-btn' type="submit" value="Submit" />
+                        </div>
+
                 </form>
+
 
             </div>
           </div>

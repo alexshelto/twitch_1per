@@ -64,8 +64,8 @@ export class CreateForm extends React.Component {
         }
         return(
 
-          <div>
-            <div class='centered-div'> 
+          <div class='large-text-centered'>
+            <div> 
 
                 <form id='mainContent' onSubmit={this.handleSubmit}>
                         <label for='username'>Twitch Channel:</label>

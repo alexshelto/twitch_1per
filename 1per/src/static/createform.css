@@ -1,6 +1,17 @@
 
-.mainContent {
+#mainContent {
 
+}
+
+.large-text-centered {
+    padding: 2vh; 
+    margin: 1vh;
+
+    padding: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 }
 
 .centered-div {
@@ -27,18 +38,3 @@ form {
 input[type='number']{
     width: 100%;
 } 
-
-#skip a {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-#skip a:focus {
-    height: auto;
-    position: static;
-    width: auto;
-}

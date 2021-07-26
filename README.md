@@ -9,7 +9,10 @@ to hog the entire feed.
 
 
 ## Usage Example
-<img src="https://raw.githubusercontent.com/alexshelto/twitch_1per/main/screenshots/feed.jpg"  />
+Creating the Twitch chat filter
 <img src="https://raw.githubusercontent.com/alexshelto/twitch_1per/main/screenshots/createEntry.jpg"  />
+
+Viewing content from the filter
+<img src="https://raw.githubusercontent.com/alexshelto/twitch_1per/main/screenshots/feed.jpg"  />
 
 

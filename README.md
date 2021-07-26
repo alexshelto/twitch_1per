@@ -1,7 +1,15 @@
 # twitch_1per
 Web tool that connects to twitch IRC. takes the first n chats from unique viewers to read. 
 
+## How it works
+Twitch 1per is a web application designed for twitch streamers to be able to filter their chat.
+It allows the streamer to filter messages by a prefix, while also only allowing 1 entry per username to appear on the feed. 
+This allows streamers to create questionnaires or other things filtering chat for what they are looking for while preventing a singular user
+to hog the entire feed. 
 
-# TODO: 
-socketio flask to do real time updates OR use front end js 
+
+## Usage Example
+<img src="https://raw.githubusercontent.com/alexshelto/twitch_1per/main/screenshots/feed.jpg"  />
+<img src="https://raw.githubusercontent.com/alexshelto/twitch_1per/main/screenshots/createEntry.jpg"  />
+
 

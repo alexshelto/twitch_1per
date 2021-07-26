@@ -9,11 +9,11 @@ const About = () => (
 
     <div class='top-box' >
         <div class='large-text-centered' >
-            <h1 class='large-header' >Filter your chat easilly</h1>
+            <h1 class='large-header' >Filtering Twitch chat made easy.</h1>
         </div>
 
         <div class='medium-text-centered' >
-            <p class='medium-p' >Filtering chat realtime with prefixes</p>
+            <p class='medium-p' >Filtering Twitch chat real time. No sign up or twitch account needed.</p>
         </div>
     </div>
 

@@ -1,11 +1,9 @@
-
-/*
-.Message{
-  border-radius: 8px;
-  padding: 10px;
+#mainContent {
 
 }
-*/
+.Message{
+
+}
 
 .messages {
     margin: 2vh;
@@ -18,6 +16,7 @@
   padding: 0.1rem;
   margin-bottom: 0.5rem;
   background-color: #6441A5;
+  width: 100%;
 }
 
 h2 {
@@ -27,7 +26,7 @@ h2 {
 
 /* message is the generated html element from the text */
 .message {
-    padding: 0.5rem;
+    padding: 1vh;
 }
 
 .message-blob .display-name {

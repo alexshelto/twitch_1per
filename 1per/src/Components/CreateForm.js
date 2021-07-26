@@ -68,22 +68,16 @@ export class CreateForm extends React.Component {
             <div class='centered-div'> 
 
                 <form id='mainContent' onSubmit={this.handleSubmit}>
-                        <label>
-                            Twitch Channel:
-                        </label>
-                            <input type="text" value={this.state.channel} onChange={this.handleChangeChannel} />
-                        <label>
-                            Message Prefix:
-                        </label>
-                            <input type="text" value={this.state.prefix} onChange={this.handleChangePrefix} />
-                        <label>
-                            Message Limit:
-                        </label>
-                        <label>
-                            <input class="middle-element" type="number" value={this.state.limit} onChange={this.handleChangeLimit} />
-                        </label>
+                        <label for='username'>Twitch Channel:</label>
+                        <input type="text" id='username' value={this.state.channel} onChange={this.handleChangeChannel} />
 
-                    <input class='submit-btn' type="submit" value="Submit" />
+                        <label for='prefix' > Message Prefix: </label>
+                        <input type="text" id='prefix' value={this.state.prefix} onChange={this.handleChangePrefix} />
+
+                        <label for='limit'>Message Limit:</label>
+                        <input type="number" id='limit' value={this.state.limit} onChange={this.handleChangeLimit} />
+
+                        <input class='submit-btn' type="submit" value="Submit" />
                 </form>
 
             </div>

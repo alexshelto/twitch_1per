@@ -32,10 +32,12 @@ function App() {
                   <Route path="/view" component={View} />
                 </div>
             </main>
-            <Footer />
          </Router>
         </div>
     );
 
 }
 export default App;
+
+// Note: Removed footer from APp
+// <Footer />

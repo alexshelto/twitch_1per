@@ -1,9 +1,6 @@
 #mainContent {
-
 }
-.Message{
 
-}
 
 .messages {
     margin: 2vh;
@@ -19,9 +16,6 @@
   width: 100%;
 }
 
-h2 {
-    margin-bottom: -1rem; /* remove bottom margin of username */
-}
 
 
 /* message is the generated html element from the text */
@@ -31,9 +25,16 @@ h2 {
 
 .message-blob .display-name {
   font-weight: bold;
+  margin-bottom: -1vh;
+  text-align: left;
+}
+
+
+
+.top-info {
+    margin-bottom: 5vh;
 }
 
 .centered-info {
     text-align: center;
 }
-

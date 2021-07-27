@@ -79,12 +79,12 @@ export class View extends React.Component {
 
         return(
           <Fragment>
-            <div>
+            <div class='top-info'>
                 <h1 class="centered-info"> {this.state.messageCount}/{this.state.messageLimit} messages | Prefix: {this.state.prefix}</h1> 
                 {StopButton}
-                <hr/>
 
           </div>
+                <hr/>
 
             <div id='mainContent'>
                 {

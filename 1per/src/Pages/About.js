@@ -13,7 +13,7 @@ const About = () => (
         </div>
 
         <div class='medium-text-centered' >
-            <p class='medium-p' >Filtering Twitch chat real time. No sign up or twitch account needed.</p>
+            <p class='medium-p' >Filtering Twitch chat real time. No sign up or twitch account needed to use this platform.</p>
         </div>
     </div>
 
@@ -29,7 +29,7 @@ const About = () => (
     <hr />
     
         <div class='details-element'>
-            <a class='details-link' href='/'>
+            <a class='details-link' href='/help'>
                 <h3>Need some help? </h3>
                 <p class='detail-p'>A guide to operating this website</p>
             </a>

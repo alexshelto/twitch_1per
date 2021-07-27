@@ -25,7 +25,7 @@ form {
 }
 
 .submit-btn {
-  display: flec;
+  display: flex;
   margin: 2vh;
   border-radius: 6px;
 }

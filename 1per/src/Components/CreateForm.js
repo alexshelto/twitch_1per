@@ -17,7 +17,6 @@ export class CreateForm extends React.Component {
         this.handleChangeChannel = this.handleChangeChannel.bind(this);
         this.handleChangePrefix= this.handleChangePrefix.bind(this);
         this.handleChangeLimit = this.handleChangeLimit.bind(this);
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -40,9 +39,6 @@ export class CreateForm extends React.Component {
             console.log("Valid limit");
             this.setState({redirect: true});
         }
-
-        // Move to new page, get unique id thing for user
-        // uuid
     }
 
     render() {
@@ -71,13 +67,13 @@ export class CreateForm extends React.Component {
                         <label for='username'>Twitch Channel:</label>
                         <input type="text" id='username' value={this.state.channel} onChange={this.handleChangeChannel} />
 
-                        <label for='prefix' > Message Prefix: </label>
+                        <label for='prefix' >Message Prefix:</label>
                         <input type="text" id='prefix' value={this.state.prefix} onChange={this.handleChangePrefix} />
 
 
                         <label for='limit'>Message Limit:</label>
                         <div class='btn-holder'>
-                          <input type="number" id='limit' value={this.state.limit} onChange={this.handleChangeLimit} />
+                          <input type="number" min='1' id='limit' value={this.state.limit} onChange={this.handleChangeLimit} />
                         </div>
 
                         <div class='btn-holder'>

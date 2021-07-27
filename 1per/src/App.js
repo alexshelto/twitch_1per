@@ -8,6 +8,8 @@ import About from "./Pages/About";
 import Create from "./Pages/Create";
 import View from "./Pages/View";
 
+import Help from "./Pages/Help";
+
 import Header from "./Components/Header";
 //import Footer from "./Components/Footer";
 
@@ -30,6 +32,7 @@ function App() {
                   <Route path="/about"  component={About} />
                   <Route path="/create"  component={Create} />
                   <Route path="/view" component={View} />
+                  <Route path="/help" exact component={Help} />
                 </div>
             </main>
          </Router>

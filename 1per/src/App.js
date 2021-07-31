@@ -9,6 +9,7 @@ import Create from "./Pages/Create";
 import View from "./Pages/View";
 
 import Help from "./Pages/Help";
+import Contact from "./Pages/Contact";
 
 import Header from "./Components/Header";
 //import Footer from "./Components/Footer";
@@ -33,6 +34,7 @@ function App() {
                   <Route path="/create"  component={Create} />
                   <Route path="/view" component={View} />
                   <Route path="/help" exact component={Help} />
+                  <Route path="/contact" exact component={Contact} />
                 </div>
             </main>
          </Router>

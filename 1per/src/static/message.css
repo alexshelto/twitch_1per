@@ -20,10 +20,11 @@
 
 /* message is the generated html element from the text */
 .message {
-    padding: 1vh;
+    padding: 1vw;
 }
 
 .message-blob .display-name {
+  padding: 1vw;
   font-weight: bold;
   margin-bottom: -1vh;
   text-align: left;

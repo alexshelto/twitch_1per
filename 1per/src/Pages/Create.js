@@ -7,7 +7,7 @@ import '../static/createform.css';
 const Create = () => (
   <Fragment>
     <div class='large-text-centered'>
-    <h1>Filter chat details </h1> 
+      <h1>Filter chat details </h1> 
     </div>
     <CreateForm />
   </Fragment>

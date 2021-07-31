@@ -22,7 +22,7 @@ const About = () => (
         <div class='details-element'>
             <a class='details-link' href='/'>
                 <h3>Creating this project </h3>
-                <p class='detail-p'>Who made this website and why?</p>
+                <p class='detail-p'>Who made this website and why.</p>
             </a>
         </div> 
 
@@ -31,16 +31,16 @@ const About = () => (
         <div class='details-element'>
             <a class='details-link' href='/help'>
                 <h3>Need some help? </h3>
-                <p class='detail-p'>A guide to operating this website</p>
+                <p class='detail-p'>A guide to operating this website.</p>
             </a>
         </div>
         
     <hr />
 
         <div class='details-element'>
-            <a class='details-link' href='/'>
+            <a class='details-link' href='/contact'>
                 <h3>Contact the developer </h3>
-                <p class='detail-p'>Report a bug or make a suggestion</p>
+                <p class='detail-p'>Report a bug or make a suggestion.</p>
             </a>
         </div>
 

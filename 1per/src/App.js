@@ -19,7 +19,7 @@ import './App.css';
 
 function App() {
     return (
-        <div class='App'>
+        <div className='App'>
         <Router>
             <div id="skip">
                 <a class='skip-to-content' href="#mainContent">Skip to main content</a>

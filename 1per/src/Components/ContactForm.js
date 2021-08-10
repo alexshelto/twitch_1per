@@ -10,22 +10,40 @@ export class ContactForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      contactType: 'Bug',
-      email: ''
+      reportType: 'Bug',
+      email: '',
+      message: ''
     };
 
-    this.handleRadioChange = this.handleRadioChange.bind(this);
     this.sendEmail = this.sendEmail.bind(this);
   }
 
-  handleRadioChange(event) {
-    this.setState({contactType: event.target.value});
-  }
+    handleChange = (param, e) => {
+      this.setState({ [param]: e.target.value })
+    }
 
-  sendEmail(event) {
-    event.preventDefault();
-    alert(event.target);
-  }
+
+  sendEmail(e) {
+
+    e.preventDefault();
+    const { reportType, email, message } = this.state;
+
+    let email_params = {
+      from_email: email,
+      to_name: process.env.REACT_APP_ID,
+      report_type: reportType,
+      message: message
+    };
+
+    emailjs.send(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE,
+      email_params,
+      process.env.REACT_APP_ID
+    );
+
+    console.log(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_ID, process.env.REACT_APP_TEMPLATE);
+    }
 
 
   render() {
@@ -39,8 +57,8 @@ export class ContactForm extends React.Component {
               <input
                 type="radio"
                 value="Bug"
-                checked={this.state.contactType === "Bug"}
-                onChange={this.handleRadioChange}
+                checked={this.state.reportType === "Bug"}
+                onChange={this.handleChange.bind(this,'reportType')}
               />
               Bug 
             </label>
@@ -50,8 +68,8 @@ export class ContactForm extends React.Component {
               <input
                 type="radio"
                 value="Suggestion"
-                checked={this.state.contactType === "Suggestion"}
-                onChange={this.handleRadioChange}
+                checked={this.state.reportType === "Suggestion"}
+                onChange={this.handleChange.bind(this, 'reportType')}
               />
               Suggestion
             </label>
@@ -59,8 +77,11 @@ export class ContactForm extends React.Component {
 
       </div>
       
-        <label>Email</label>
-        <input type="email" name="user_email" />   
+        <label>Your email address</label>
+        <input type="email" name="user_email" onChange={this.handleChange.bind(this, 'email')} / >   
+
+        <label>Message</label>
+        <textarea name="message" onChange={this.handleChange.bind(this, 'message')} />
 
                 <div class='btn-holder'>
                   <input class='submit-btn' type="submit" value="Submit" />

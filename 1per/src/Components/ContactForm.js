@@ -1,9 +1,8 @@
-//import { Redirect } from 'react-router-dom';
 
 
 import React from 'react';
 import emailjs from 'emailjs-com';
-
+import '../static/contactstyles.css';
 
 
 export class ContactForm extends React.Component {
@@ -16,17 +15,23 @@ export class ContactForm extends React.Component {
     };
 
     this.sendEmail = this.sendEmail.bind(this);
+
   }
 
-    handleChange = (param, e) => {
-      this.setState({ [param]: e.target.value })
-    }
+  handleChange = (param, e) => {
+    this.setState({ [param]: e.target.value })
+  }
+
+
+  
+
 
 
   sendEmail(e) {
 
     e.preventDefault();
     const { reportType, email, message } = this.state;
+
 
     let email_params = {
       from_email: email,
@@ -40,9 +45,12 @@ export class ContactForm extends React.Component {
       process.env.REACT_APP_TEMPLATE,
       email_params,
       process.env.REACT_APP_ID
-    );
+    ).then(function(response) {
+      alert("Email has been sent, thanks for the feedback!");
+    }, function(error) {
+      alert('something went wrong, please try again later');
+    });
 
-    console.log(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_ID, process.env.REACT_APP_TEMPLATE);
     }
 
 

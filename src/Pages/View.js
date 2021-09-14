@@ -48,7 +48,7 @@ export class View extends React.Component {
                     color: userstate['color']
                 }
 
-                if(message.toLowerCase().startsWith(this.state.prefix) && !this.state.usernameHistory.has(content.username) ) {
+                if(message.toLowerCase().includes(this.state.prefix) && !this.state.usernameHistory.has(content.username) ) {
                     // Need to update the messages state
 
                     this.setState(prevState => ({

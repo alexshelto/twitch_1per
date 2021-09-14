@@ -25,7 +25,7 @@ export class CreateForm extends React.Component {
     }
 
     handleChangePrefix(event) {
-        this.setState({prefix: event.target.value});
+        this.setState({prefix: event.target.value.toLowerCase()});
     }
 
     handleChangeLimit(event) {
@@ -67,7 +67,7 @@ export class CreateForm extends React.Component {
                         <label for='username'>Twitch Channel:</label>
                         <input type="text" id='username' value={this.state.channel} onChange={this.handleChangeChannel} />
 
-                        <label for='prefix' >Message Prefix:</label>
+                        <label for='prefix' >Target word / phrase:</label>
                         <input type="text" id='prefix' value={this.state.prefix} onChange={this.handleChangePrefix} />
 
 

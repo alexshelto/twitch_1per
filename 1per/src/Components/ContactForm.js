@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import emailjs from 'emailjs-com';
 import '../static/contactstyles.css';
@@ -21,10 +20,6 @@ export class ContactForm extends React.Component {
   handleChange = (param, e) => {
     this.setState({ [param]: e.target.value })
   }
-
-
-  
-
 
 
   sendEmail(e) {
@@ -58,7 +53,10 @@ export class ContactForm extends React.Component {
     return (
         <form id='mainContent' onSubmit={this.sendEmail}>
             
+
+      <legend> Type of report </legend>
           <div class='radio-group'>
+
 
             <div className="radio">
             <label>
@@ -71,6 +69,8 @@ export class ContactForm extends React.Component {
               Bug 
             </label>
           </div>
+
+
           <div className="radio">
             <label>
               <input
@@ -84,12 +84,13 @@ export class ContactForm extends React.Component {
           </div>
 
       </div>
+
       
         <label>Your email address</label>
-        <input type="email" name="user_email" onChange={this.handleChange.bind(this, 'email')} / >   
+        <input id='text' type="text" name="user_email" onChange={this.handleChange.bind(this, 'email')} / >   
 
         <label>Message</label>
-        <textarea name="message" onChange={this.handleChange.bind(this, 'message')} />
+        <textarea id='text' name="message" onChange={this.handleChange.bind(this, 'message')} />
 
                 <div class='btn-holder'>
                   <input class='submit-btn' type="submit" value="Submit" />

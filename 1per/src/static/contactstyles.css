@@ -1,0 +1,35 @@
+
+
+#mainContent {
+
+
+}
+
+/*
+form {
+    margin-right: auto;
+    margin-left: auto;
+}
+*/
+
+
+.radio-group {
+  margin: 2vh;
+}
+
+
+
+#text {
+  margin: 2vh;
+  width: 80%;
+}
+
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+
+}

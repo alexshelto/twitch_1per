@@ -44,11 +44,11 @@ hr {
     justify-content: center;
     flex-direction: column;
 
-
 }
 
-.details-element {
 
+.help-info {
+  width: 50vw;
 }
 
 .details-link {

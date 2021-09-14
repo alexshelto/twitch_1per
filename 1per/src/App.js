@@ -3,7 +3,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Home from "./Pages/Home";
+/* import Home from "./Pages/Home"; */
 import About from "./Pages/About";
 import Create from "./Pages/Create";
 import View from "./Pages/View";
@@ -29,8 +29,7 @@ function App() {
 
             <main>
                 <div id='container'>
-                  <Route path="/" exact component={Home} />
-                  <Route path="/about"  component={About} />
+                  <Route path="/" exact component={About} />
                   <Route path="/create"  component={Create} />
                   <Route path="/view" component={View} />
                   <Route path="/help" exact component={Help} />
@@ -44,5 +43,6 @@ function App() {
 }
 export default App;
 
+/* <Route path="/about"  component={About} /> */
 // Note: Removed footer from APp
 // <Footer />

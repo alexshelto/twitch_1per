@@ -34,7 +34,6 @@ function App() {
                   <Route path="/view" component={View} />
                   <Route path="/help" exact component={Help} />
                   <Route path="/about_me" exact component={About_Me} />
-
                   <Route path="/contact" exact component={Contact} />
                 </div>
             </main>

@@ -1,10 +1,20 @@
 
-import { Fragment } from "react";
+//import { Fragment } from "react";
+import React, { useEffect, Fragment } from 'react'
+
 
 import '../static/about.css';
 
 
-const About = () => (
+//const About = () => (
+function About() {
+
+  useEffect(() => {
+     document.title = "twitch filer | Home";  
+   });
+
+  return (
+  
   <Fragment>
 
     <div class='top-box' >
@@ -47,7 +57,9 @@ const About = () => (
     </div>
 
   </Fragment>
+
   );
+}
 
 
 export default About;

@@ -1,17 +1,20 @@
 
 
-import { Fragment } from 'react';
+import { Fragment, useEffect } from "react";
 import { ContactForm } from '../Components/ContactForm';
 
-const Contact = () => (
+function Contact() {
 
-  <Fragment>
+  useEffect(() => {
+     document.title = "twitch filer | contact";  
+   });
 
-    <ContactForm />
-
-  </Fragment>
-
-);
+  return(
+    <Fragment>
+      <ContactForm />
+    </Fragment>
+  );
+}
 
 
 export default Contact;

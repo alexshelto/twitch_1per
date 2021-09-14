@@ -1,5 +1,5 @@
 
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
 import Message from '../Components/Message';
 
 import tmi from 'tmi.js';
@@ -7,6 +7,8 @@ import tmi from 'tmi.js';
 
 
 export class View extends React.Component {
+
+
     constructor(props) {
         super(props);
 

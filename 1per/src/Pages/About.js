@@ -20,7 +20,7 @@ const About = () => (
     <div id='mainContent'>
 
         <div class='details-element'>
-            <a class='details-link' href='/'>
+            <a class='details-link' href='/about_me'>
                 <h3>Creating this project </h3>
                 <p class='detail-p'>Who made this website and why.</p>
             </a>

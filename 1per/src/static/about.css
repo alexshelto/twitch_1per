@@ -57,6 +57,10 @@ hr {
 
 }
 
+a {
+    color: #00ABF0;
+}
+
 .details-link:hover, .details-link:focus{
     color: #00ABF0;
 }

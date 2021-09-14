@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 /* import Home from "./Pages/Home"; */
 import About from "./Pages/About";
+import About_Me from "./Pages/About_Me";
 import Create from "./Pages/Create";
 import View from "./Pages/View";
 
@@ -12,7 +13,6 @@ import Help from "./Pages/Help";
 import Contact from "./Pages/Contact";
 
 import Header from "./Components/Header";
-//import Footer from "./Components/Footer";
 
 import './App.css';
 
@@ -33,6 +33,8 @@ function App() {
                   <Route path="/create"  component={Create} />
                   <Route path="/view" component={View} />
                   <Route path="/help" exact component={Help} />
+                  <Route path="/about_me" exact component={About_Me} />
+
                   <Route path="/contact" exact component={Contact} />
                 </div>
             </main>
